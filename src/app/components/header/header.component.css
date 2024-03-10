@@ -1,0 +1,45 @@
+.navbar {
+  position: relative;
+  background-color: #003366; /* Dark blue background color */
+  overflow: hidden; /* Clear float */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar .icons {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.navbar .icons a {
+  display: inline-block; /* Display icons inline */
+  margin-right: 10px; /* Adjust spacing between icons */
+  font-size: 2em; /* Increase icon size by two times */
+}
+
+.navbar .icons a i {
+  pointer-events: none; /* Disable pointer events on the icons */
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 2em; /* Increase text size by two times */
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
