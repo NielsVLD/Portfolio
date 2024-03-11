@@ -3,6 +3,6 @@
 @import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
-.app-component {
-  background-color: green; /* Light grey background color */
+body {
+  background-color: #1d3557;
 }
