@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FooterComponent} from "./components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterLink,
     RouterLinkActive,
     HeaderComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
