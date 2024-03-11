@@ -1,3 +1,23 @@
-.app-component {
-  background-color: #f4f4f4; /* Light grey background color */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.app-header {
+  height: 60px; /* Set the height of the header */
+}
+
+.content {
+  flex-grow: 1;
+  min-height: calc(100vh - 100px); /* Set minimum height for content area */
+}
+
+.app-footer {
+  height: 40px; /* Set the height of the footer */
 }
