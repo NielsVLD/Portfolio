@@ -21,8 +21,6 @@ export class AboutComponent {
 
   profilePicture: string = 'assets/images/profile_pic.jpg';
 
-  email: string = 'nielskrommenhoek@hotmail.nl';
-
   loaded: boolean = false;
 
   onImageLoad() {
