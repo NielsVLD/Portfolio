@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 
 import {
   CommonModule,
@@ -56,4 +56,6 @@ export class AboutComponent implements OnInit {
   onImageLoad() {
     this.loaded = true;
   }
+
+  protected readonly length = length;
 }
