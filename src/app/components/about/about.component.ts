@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  OnChanges,
-  SimpleChanges,
-  ViewChild,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { NgIf, NgOptimizedImage } from '@angular/common';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
