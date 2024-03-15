@@ -46,7 +46,6 @@ export class AboutComponent implements OnInit {
       })
       .forEach((result) => {
         this.projects = result;
-        console.log(this.projects);
       })
       .catch((error) => {
         console.error(error);
