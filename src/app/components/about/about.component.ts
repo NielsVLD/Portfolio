@@ -1,27 +1,9 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
-
-import {
-  CommonModule,
-  NgFor,
-  NgForOf,
-  NgIf,
-  NgOptimizedImage,
-} from '@angular/common';
-import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Project } from '../../entities/project.entity';
 
 @Component({
   selector: 'app-about',
-  standalone: true,
-  imports: [
-    NgOptimizedImage,
-    MatProgressSpinner,
-    NgIf,
-    CommonModule,
-    NgFor,
-    NgForOf,
-  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
