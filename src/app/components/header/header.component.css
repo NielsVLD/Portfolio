@@ -46,3 +46,9 @@
   text-decoration: underline; /* Underline text on hover */
   background-color: transparent; /* Remove background color on hover */
 }
+
+.navbar .signOut {
+  color: #f1faee;
+  font-size: 2em;
+  padding: 14px 20px;
+}

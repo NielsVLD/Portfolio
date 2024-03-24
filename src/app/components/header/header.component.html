@@ -3,9 +3,12 @@
     <li class="icons">
       <a href="{{ linkedin }}"><i class="fab fa-linkedin"></i></a>
       <a href="{{ github }}"><i class="fab fa-github"></i></a>
-      <a routerLink="/login">
+      <a *ngIf="!isSignedIn; else signOutIcon" routerLink="/login">
         <i class="fa fa-sign-in"></i>
       </a>
+      <ng-template #signOutIcon>
+        <i (click)="signOut()" class="fa fa-sign-out signOut"></i>
+      </ng-template>
     </li>
     <li><a routerLink="/">Home</a></li>
     <li><a routerLink="/about">About</a></li>
