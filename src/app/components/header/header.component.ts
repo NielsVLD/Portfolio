@@ -7,14 +7,6 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [
-    MatToolbarModule,
-    RouterLink,
-    MatIconButton,
-    MatIcon,
-    MdbCollapseModule,
-  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
