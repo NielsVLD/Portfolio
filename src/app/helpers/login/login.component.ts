@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   authFailed: boolean = false;
   signedIn: boolean = false;
+  loaded: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
   ) {
     this.authService.isSignedIn().forEach((isSignedIn) => {
       this.signedIn = isSignedIn;
+      this.loaded = true;
     });
   }
 
@@ -46,7 +48,7 @@ export class LoginComponent implements OnInit {
       .signIn(userName, password)
       .forEach((response) => {
         if (response) {
-          this.router.navigateByUrl('about');
+          this.router.navigateByUrl('');
         }
       })
       .catch((_) => {
