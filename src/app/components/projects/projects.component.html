@@ -4,8 +4,15 @@
 </div>
 
 <div class="projects">
-  <div class="project" *ngFor="let project of projects" (click)="openModal(project)">
+  <div
+    class="project"
+    *ngFor="let project of projects"
+    (click)="openModal(project)"
+  >
     <h2>{{ project.name }}</h2>
     <p>{{ project.description }}</p>
-    <i class="fa-brands fa-python"></i></div>
+    <ng-container *ngFor="let icon of project.icons">
+      <i class="{{ icon }}"></i>
+    </ng-container>
+  </div>
 </div>

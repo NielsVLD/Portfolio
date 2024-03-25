@@ -20,6 +20,7 @@
   width: 25%; /* Increase the width */
   text-align: center;
   color: #f1faee;
+  cursor: pointer;
 }
 
 .project img {
