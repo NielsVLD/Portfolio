@@ -1,0 +1,30 @@
+<div class="header-text">
+  <h1>Welcome to my portfolio!</h1>
+  <h4>
+    This portfolio is still under the construction. Please enjoy a game of
+    Hangman while I continue to develop the site.
+  </h4>
+</div>
+
+<div class="hangman">
+  <h1>Hangman</h1>
+  <ng-container>
+    <p>Attempts left: {{ attemptsLeft }}</p>
+    <p>{{ getMaskedWord() }}</p>
+    <p>
+      Guessed Letters:
+      <span *ngFor="let letter of guessedLetters">{{ letter }}</span>
+    </p>
+    <button
+      *ngFor="let letter of 'abcdefghijklmnopqrstuvwxyz'.split('')"
+      (click)="makeGuess(letter)"
+      [disabled]="guessedLetters.has(letter) || isGameOver()"
+    >
+      {{ letter }}
+    </button>
+  </ng-container>
+  <p class="win-text" *ngIf="isGameOver()">
+    {{ isWordGuessed() ? "Congratulations, you won!" : "Game Over" }}
+    <button (click)="pickRandomWord()">Play Again</button>
+  </p>
+</div>

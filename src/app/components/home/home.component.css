@@ -1,0 +1,19 @@
+.header-text {
+  color: #f1faee;
+  text-align: center;
+  padding: 30px;
+}
+
+.hangman {
+  color: #f1faee;
+  text-align: center;
+  padding: 60px;
+}
+
+span {
+  margin-right: 5px; /* Adjust as needed */
+}
+
+.win-text {
+  padding: 10px;
+}
