@@ -39,3 +39,7 @@
 .text {
   color: #f1faee;
 }
+
+.spinner {
+  align-self: center;
+}

@@ -30,4 +30,8 @@ export class ProjectsComponent implements OnInit {
     const modalRef = this.modalService.open(ProjectModalComponent);
     modalRef.componentInstance.project = project;
   }
+
+  log() {
+    console.log('test');
+  }
 }
