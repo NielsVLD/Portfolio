@@ -5,6 +5,9 @@ import { LoginComponent } from './helpers/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'Portfolio/', redirectTo: '/home', pathMatch: 'full' },
+
   {
     path: 'home',
     component: HomeComponent,
