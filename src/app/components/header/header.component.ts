@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -18,10 +18,8 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.auth.onStateChanged().forEach((state: any) => {
-      this.auth
-        .isSignedIn()
-        .forEach((signedIn: boolean) => (this.isSignedIn = signedIn));
+    this.auth.isSignedIn().subscribe((response) => {
+      this.isSignedIn = response;
     });
   }
 
@@ -29,6 +27,7 @@ export class HeaderComponent implements OnInit {
     if (this.isSignedIn) {
       this.auth.signOut().forEach((response) => {
         if (response) {
+          this.isSignedIn = false;
           this.router.navigateByUrl('');
         }
       });
