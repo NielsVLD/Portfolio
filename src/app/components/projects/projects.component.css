@@ -34,3 +34,8 @@
   font-size: 2em; /* Increase the size of the icons */
 }
 
+.icon {
+  font-size: 0.8em;
+  cursor: pointer;
+}
+

@@ -7,9 +7,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProjectsService {
+  url: string = '/api/Projects';
+
   constructor(private http: HttpClient) {}
 
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>('/api/Projects');
+    return this.http.get<Project[]>(this.url);
+  }
+
+  postNewProject(project: Project): Observable<Project> {
+    const headers = { 'content-type': 'application/json' };
+    return this.http.post<Project>(this.url, project, { headers: headers });
   }
 }
