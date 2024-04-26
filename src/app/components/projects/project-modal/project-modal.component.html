@@ -3,7 +3,7 @@
     <h5 class="modal-title">
       {{ project.name }}
       <ng-container *ngIf="isSignedIn">
-        <i style="cursor: pointer" class="fa fa-pencil-square"></i>
+        <i (click)="openEditModal()" style="cursor: pointer" class="fa fa-pencil-square"></i>
       </ng-container>
     </h5>
     <li (click)="closeModal()" class="fa fa-times icons"></li>

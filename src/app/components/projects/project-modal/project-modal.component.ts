@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Project } from '../../../entities/project.entity';
 import { NgFor, NgIf } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
+import { ProjectModalNewComponent } from '../project-modal-new/project-modal-new.component';
+import { ProjectModalEditComponent } from '../project-modal-edit/project-modal-edit.component';
 
 @Component({
   selector: 'app-project-modal',
@@ -19,6 +21,7 @@ export class ProjectModalComponent implements OnInit {
   constructor(
     public activeModal: NgbActiveModal,
     private authService: AuthService,
+    private modalService: NgbModal,
   ) {}
 
   ngOnInit() {
@@ -29,5 +32,11 @@ export class ProjectModalComponent implements OnInit {
 
   closeModal() {
     this.activeModal.dismiss('Cross click'); // Dismiss the modal
+  }
+
+  openEditModal() {
+    this.closeModal();
+    const modal = this.modalService.open(ProjectModalEditComponent);
+    modal.componentInstance.project = this.project;
   }
 }
