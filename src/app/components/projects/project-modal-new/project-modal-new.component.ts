@@ -26,27 +26,48 @@ export class ProjectModalNewComponent implements OnInit {
 
   ngOnInit(): void {
     this.newProjectForm = this.fb.group({
-      name: ["", Validators.required, Validators.maxLength(50)],
-      description: ["", Validators.required, Validators.maxLength(500)],
-      descriptionLong: ["", Validators.required, Validators.maxLength(2000)],
+      name: ["", Validators.required],
+      description: ["", Validators.required],
+      descriptionLong: ["", Validators.required],
       skills: [[]],
       icons: [[]]
     });
   }
 
   onSubmit() {
-    if (this.newProjectForm.valid) {
-      const newProject: Project = this.newProjectForm.value;
-      this.projectService.postNewProject(newProject).subscribe(
-        (response) => {
-          console.log("project created");
-        },
-        (error) => {
-          console.error("Error:", error);
-        }
-      );
-    } else {
-      console.log("Error in form");
+    if (!this.newProjectForm.valid) {
+      return;
     }
+    const newProject: Project = {
+      id: 0,
+      name: this.newProjectForm.get('name')?.value,
+      description: this.newProjectForm.get('description')?.value,
+      descriptionLong: this.newProjectForm.get('descriptionLong')?.value,
+      skills: this.newProjectForm.get('skills')?.value,
+      icons: this.newProjectForm.get('icons')?.value
+    }
+        this.projectService.postNewProject(newProject).subscribe(
+          (response) => {
+            console.log("project created");
+          },
+          (error) => {
+            console.error("Error:", error);
+          }
+        );
   }
+
+  //   if (this.newProjectForm.valid) {
+  //     const newProject: Project = this.newProjectForm.value;
+  //     this.projectService.postNewProject(newProject).subscribe(
+  //       (response) => {
+  //         console.log("project created");
+  //       },
+  //       (error) => {
+  //         console.error("Error:", error);
+  //       }
+  //     );
+  //   } else {
+  //     console.log("Error in form");
+  //   }
+  // }
 }

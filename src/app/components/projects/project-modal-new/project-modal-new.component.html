@@ -18,5 +18,5 @@
       <input formControlName="descriptionLong" />
     </label>
   </div>
-  <button [disabled]="newProjectForm.invalid" type="submit">Send</button>
+  <button [disabled]="!newProjectForm.valid" type="submit">Send</button>
 </form>

@@ -1,5 +1,5 @@
 const TARGET = {
-  target: "http://localhost:5167",
+  target: "https://localhost:44322",
   secure: false,
 };
 

@@ -1,4 +1,4 @@
-# Portfolio (WORK IN PROGRESS) 
+# Portfolio (WORK IN PROGRESS)
 
 My portfolio website made with Angular and hosted on GitHub Pages.
 
