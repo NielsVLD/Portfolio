@@ -14,6 +14,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AppRoutingModule } from './app.routing.module';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BoredApiPageComponent } from './components/bored-api-page/bored-api-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     AboutComponent,
+    BoredApiPageComponent,
   ],
   imports: [
     BrowserModule,

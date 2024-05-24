@@ -1,0 +1,9 @@
+<div class="centered-content">
+  <ng-container *ngIf="loaded; else loading">
+    <h1>Today you will...</h1>
+    <p>{{ activity.activity }}</p>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>
