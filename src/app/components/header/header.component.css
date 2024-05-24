@@ -38,11 +38,20 @@
   padding: 14px 20px;
   text-decoration: none;
   font-size: 2em; /* Increase text size by two times */
-  transition: color 0.3s, text-decoration 0.3s; /* Add transition effect */
+  transition:
+    color 0.3s,
+    text-decoration 0.3s; /* Add transition effect */
 }
 
 .navbar a:hover {
-  color: #BDBDBD; /* Change text color on hover */
+  color: #bdbdbd; /* Change text color on hover */
   text-decoration: underline; /* Underline text on hover */
   background-color: transparent; /* Remove background color on hover */
+}
+
+.navbar .signOut {
+  color: #f1faee;
+  font-size: 2em;
+  padding: 14px 20px;
+  cursor: pointer;
 }

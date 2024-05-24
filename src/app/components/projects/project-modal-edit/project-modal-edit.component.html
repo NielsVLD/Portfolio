@@ -1,0 +1,38 @@
+<form [formGroup]="updatedProjectForm" (ngSubmit)="onSubmit()">
+  <h3>Edit Project {{ project.name }}:</h3>
+  <div>
+    <label>
+      Project Name:
+      <input formControlName="name" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Description:
+      <textarea formControlName="description" rows="3"></textarea>
+    </label>
+  </div>
+  <div>
+    <label>
+      Long description:
+      <textarea formControlName="descriptionLong" rows="5"></textarea>
+    </label>
+  </div>
+  <div>
+    <label>
+      Skills:
+      <mat-form-field>
+        <mat-select
+          placeholder="Select skills..."
+          [formControl]="skills"
+          multiple
+        >
+          <mat-option *ngFor="let skill of skillsList" [value]="skill">{{
+            skill
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </label>
+  </div>
+  <button [disabled]="!updatedProjectForm.valid" type="submit">Submit</button>
+</form>

@@ -1,0 +1,91 @@
+.modal-content {
+  background-color: #f4f4f8; /* Light grey background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: #1b263b; /* Dark blue color for the heading */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  color: #1b263b; /* Dark blue text color */
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px; /* Increased padding for better readability */
+  margin-top: 4px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: block;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #1b263b; /* Dark blue border on focus */
+}
+
+button {
+  background-color: #1b263b; /* Dark blue background for the button */
+  color: #ffffff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #142238; /* Slightly darker blue on hover */
+}
+
+button:disabled {
+  background-color: #cccccc; /* Greyed out button when form is invalid */
+  cursor: default;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+.mat-form-field {
+  width: 100%; /* Full width */
+  display: block;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.mat-form-field.mat-focused .mat-form-field-infix {
+  border-color: #1b263b;
+}
+
+.mat-option {
+  color: #1b263b;
+}
+
+.mat-select {
+  width: 100%;
+  display: block;
+}

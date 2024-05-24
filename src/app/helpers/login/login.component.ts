@@ -48,7 +48,9 @@ export class LoginComponent implements OnInit {
       .signIn(userName, password)
       .forEach((response) => {
         if (response) {
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('/home').then(() => {
+            window.location.reload();
+          });
         }
       })
       .catch((_) => {

@@ -1,3 +1,4 @@
 # Ignore artifacts:
 build
 coverage
+/src/app/components/projects/project-modal-new/project-modal-new.component.ts

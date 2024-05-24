@@ -1,0 +1,39 @@
+.intro {
+  padding: 20px;
+  text-align: center;
+  color: #1b263b;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.project {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 25%; /* Increase the width */
+  text-align: center;
+  color: #1b263b;
+  cursor: pointer;
+}
+
+.project img {
+  width: 250px; /* Increase the width */
+  height: 250px; /* Set a fixed height */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  margin-bottom: 10px;
+}
+
+.project i {
+  font-size: 2em; /* Increase the size of the icons */
+}
+
+.icon {
+  font-size: 0.8em;
+  cursor: pointer;
+}
