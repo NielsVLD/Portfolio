@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
 import { NgForOf, NgIf } from '@angular/common';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
@@ -39,6 +39,18 @@ export class ProjectsComponent implements OnInit {
   }
 
   openModalNewProject() {
-    this.modalService.open(ProjectModalNewComponent);
+    const modalRef = this.modalService.open(ProjectModalNewComponent);
+    modalRef.result.catch((reason) => {
+      console.log('Modal Dismissed with reason:', reason);
+      if (reason === 'Submit project') {
+        this.reloadProjects();
+      }
+    });
+  }
+
+  reloadProjects(): void {
+    this.projectsService.getProjects().subscribe((response) => {
+      this.projects = response;
+    })
   }
 }

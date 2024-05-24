@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import {
   FormBuilder,
   FormGroup,
@@ -7,6 +7,7 @@ import {
 } from "@angular/forms";
 import { Project } from "../../../entities/project.entity";
 import { ProjectsService } from "../../../services/projects.service";
+import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: "app-project-modal-new",
@@ -16,11 +17,15 @@ import { ProjectsService } from "../../../services/projects.service";
   styleUrl: "./project-modal-new.component.css"
 })
 export class ProjectModalNewComponent implements OnInit {
+  @Output()
+  public reloadProjects: EventEmitter<Project> = new EventEmitter();
+
   newProjectForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private projectService: ProjectsService
+    private projectService: ProjectsService,
+    public activeModal: NgbActiveModal
   ) {
   }
 
@@ -38,6 +43,7 @@ export class ProjectModalNewComponent implements OnInit {
     if (!this.newProjectForm.valid) {
       return;
     }
+    this.closeModal()
     const newProject: Project = {
       id: 0,
       name: this.newProjectForm.get('name')?.value,
@@ -56,18 +62,7 @@ export class ProjectModalNewComponent implements OnInit {
         );
   }
 
-  //   if (this.newProjectForm.valid) {
-  //     const newProject: Project = this.newProjectForm.value;
-  //     this.projectService.postNewProject(newProject).subscribe(
-  //       (response) => {
-  //         console.log("project created");
-  //       },
-  //       (error) => {
-  //         console.error("Error:", error);
-  //       }
-  //     );
-  //   } else {
-  //     console.log("Error in form");
-  //   }
-  // }
+  closeModal() {
+    this.activeModal.dismiss('Submit project');
+  }
 }

@@ -1,8 +1,7 @@
 .intro {
   padding: 20px;
-  background-color: #1b263b;
   text-align: center;
-  color: #f1faee;
+  color: #1b263b;
 }
 
 .projects {
@@ -19,7 +18,7 @@
   border-radius: 5px;
   width: 25%; /* Increase the width */
   text-align: center;
-  color: #f1faee;
+  color: #1b263b;
   cursor: pointer;
 }
 

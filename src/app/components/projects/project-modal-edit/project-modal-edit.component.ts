@@ -4,7 +4,6 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
-  Validators,
 } from '@angular/forms';
 import { ProjectsService } from '../../../services/projects.service';
 import { Project } from '../../../entities/project.entity';
@@ -17,7 +16,7 @@ import { Project } from '../../../entities/project.entity';
   styleUrl: './project-modal-edit.component.css',
 })
 export class ProjectModalEditComponent implements OnInit {
-  projectForm!: FormGroup;
+  updatedProjectForm!: FormGroup;
   project!: Project;
 
   constructor(
@@ -26,11 +25,10 @@ export class ProjectModalEditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.project);
-    this.projectForm = this.fb.group({
+    this.updatedProjectForm = this.fb.group({
       id: [this.project.id],
-      name: [''],
-      description: [''],
+      name: [this.project.name],
+      description: [this.project.description],
       descriptionLong: [''],
       skills: [[]],
       icons: [[]],
@@ -38,8 +36,15 @@ export class ProjectModalEditComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.projectForm.valid) {
-      const updatedProject: Project = this.projectForm.value;
+    if (this.updatedProjectForm.valid) {
+      const updatedProject: Project = {
+        id: this.project.id,
+        name: this.updatedProjectForm.get('name')?.value,
+        description: this.updatedProjectForm.get('description')?.value,
+        descriptionLong: this.updatedProjectForm.get('descriptionLong')?.value,
+        skills: this.updatedProjectForm.get('skills')?.value,
+        icons: this.updatedProjectForm.get('icons')?.value
+      }
       this.projectService
         .updateProject(updatedProject, this.project.id)
         .subscribe(
