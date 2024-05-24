@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { ProjectsService } from '../../../services/projects.service';
 import { Project } from '../../../entities/project.entity';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-project-modal-edit',
@@ -22,6 +23,7 @@ export class ProjectModalEditComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private projectService: ProjectsService,
+    public activeModal: NgbActiveModal,
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class ProjectModalEditComponent implements OnInit {
 
   onSubmit() {
     if (this.updatedProjectForm.valid) {
+      this.closeModal();
       const updatedProject: Project = {
         id: this.project.id,
         name: this.updatedProjectForm.get('name')?.value,
@@ -58,5 +61,9 @@ export class ProjectModalEditComponent implements OnInit {
     } else {
       console.log('Error in form');
     }
+  }
+
+  closeModal() {
+    this.activeModal.dismiss('Submit project');
   }
 }

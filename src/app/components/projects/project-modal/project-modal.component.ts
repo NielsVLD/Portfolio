@@ -3,7 +3,6 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Project } from '../../../entities/project.entity';
 import { NgFor, NgIf } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
-import { ProjectModalNewComponent } from '../project-modal-new/project-modal-new.component';
 import { ProjectModalEditComponent } from '../project-modal-edit/project-modal-edit.component';
 
 @Component({

@@ -1,26 +1,29 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import {
-  FormBuilder,
+  FormBuilder, FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators
 } from "@angular/forms";
 import { Project } from "../../../entities/project.entity";
 import { ProjectsService } from "../../../services/projects.service";
-import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { MatFormField } from "@angular/material/form-field";
+import { MatOption, MatSelect } from "@angular/material/select";
+import { NgForOf } from "@angular/common";
 
 @Component({
   selector: "app-project-modal-new",
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatFormField, MatSelect, MatOption, NgForOf],
   templateUrl: "./project-modal-new.component.html",
   styleUrl: "./project-modal-new.component.css"
 })
 export class ProjectModalNewComponent implements OnInit {
-  @Output()
-  public reloadProjects: EventEmitter<Project> = new EventEmitter();
-
   newProjectForm!: FormGroup;
+  skills = new FormControl()
+
+  skillsList = ['Angular', 'C#', 'CSS', 'DOTNET', 'HTML', 'Javascript', 'NodeJS', 'Python', 'Typescript'];
 
   constructor(
     private fb: FormBuilder,
@@ -40,6 +43,7 @@ export class ProjectModalNewComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.skills.value)
     if (!this.newProjectForm.valid) {
       return;
     }
@@ -49,7 +53,7 @@ export class ProjectModalNewComponent implements OnInit {
       name: this.newProjectForm.get('name')?.value,
       description: this.newProjectForm.get('description')?.value,
       descriptionLong: this.newProjectForm.get('descriptionLong')?.value,
-      skills: this.newProjectForm.get('skills')?.value,
+      skills: this.skills.value,
       icons: this.newProjectForm.get('icons')?.value
     }
         this.projectService.postNewProject(newProject).subscribe(

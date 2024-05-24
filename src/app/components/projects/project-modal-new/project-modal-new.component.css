@@ -1,4 +1,3 @@
-/* Modal content styling */
 .modal-content {
   background-color: #f4f4f8; /* Light grey background */
   padding: 20px;
@@ -66,3 +65,28 @@ div {
 textarea {
   resize: vertical; /* Allow vertical resizing only */
 }
+
+.mat-form-field {
+  width: 100%; /* Full width */
+  display: block;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.mat-form-field.mat-focused .mat-form-field-infix {
+  border-color: #1b263b;
+}
+
+.mat-option {
+  color: #1b263b;
+}
+
+.mat-select {
+  width: 100%;
+  display: block;
+}
+
