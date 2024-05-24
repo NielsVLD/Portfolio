@@ -9,14 +9,16 @@
   <div>
     <label>
       Description:
-      <input formControlName="description" />
+      <textarea formControlName="description" rows="3"></textarea>
+      <!-- Updated to textarea -->
     </label>
   </div>
   <div>
     <label>
       Long description:
-      <input formControlName="descriptionLong" />
+      <textarea formControlName="descriptionLong" rows="5"></textarea>
+      <!-- Updated to textarea -->
     </label>
   </div>
-  <button [disabled]="!newProjectForm.valid" type="submit">Send</button>
+  <button [disabled]="!newProjectForm.valid" type="submit">Submit</button>
 </form>

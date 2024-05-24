@@ -1,23 +1,25 @@
-<div class="intro">
-  <h1>
-    Projects
-    <ng-container *ngIf="isSignedIn">
-      <li (click)="openModalNewProject()" class="fa fa-plus icon"></li>
-    </ng-container>
-  </h1>
-  <p>Explore some of the things I've worked on:</p>
-</div>
-
-<div class="projects">
-  <div
-    class="project"
-    *ngFor="let project of projects"
-    (click)="openModalProjectInfo(project)"
-  >
-    <h2>{{ project.name }}</h2>
-    <p>{{ project.description }}</p>
-    <ng-container *ngFor="let icon of project.icons">
-      <i class="{{ icon }}"></i>
-    </ng-container>
+<ng-container *ngIf="loaded">
+  <div class="intro">
+    <h1>
+      Projects
+      <ng-container *ngIf="isSignedIn">
+        <li (click)="openModalNewProject()" class="fa fa-plus icon"></li>
+      </ng-container>
+    </h1>
+    <p>Explore some of the things I've worked on:</p>
   </div>
-</div>
+
+  <div class="projects">
+    <div
+      class="project"
+      *ngFor="let project of projects"
+      (click)="openModalProjectInfo(project)"
+    >
+      <h2>{{ project.name }}</h2>
+      <p>{{ project.description }}</p>
+      <ng-container *ngFor="let icon of project.icons">
+        <i class="{{ icon }}"></i>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

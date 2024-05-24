@@ -17,6 +17,7 @@ import { ProjectModalNewComponent } from './project-modal-new/project-modal-new.
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   isSignedIn: boolean = false;
+  loaded: boolean = false;
 
   constructor(
     private modalService: NgbModal,
@@ -30,6 +31,7 @@ export class ProjectsComponent implements OnInit {
     });
     this.auth.isSignedIn().subscribe((response) => {
       this.isSignedIn = response;
+      this.loaded = true;
     });
   }
 
