@@ -43,8 +43,8 @@ export class ProjectModalEditComponent implements OnInit {
         description: this.updatedProjectForm.get('description')?.value,
         descriptionLong: this.updatedProjectForm.get('descriptionLong')?.value,
         skills: this.updatedProjectForm.get('skills')?.value,
-        icons: this.updatedProjectForm.get('icons')?.value
-      }
+        icons: this.updatedProjectForm.get('icons')?.value,
+      };
       this.projectService
         .updateProject(updatedProject, this.project.id)
         .subscribe(

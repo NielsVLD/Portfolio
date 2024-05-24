@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { NgForOf, NgIf } from '@angular/common';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
@@ -51,6 +51,6 @@ export class ProjectsComponent implements OnInit {
   reloadProjects(): void {
     this.projectsService.getProjects().subscribe((response) => {
       this.projects = response;
-    })
+    });
   }
 }
