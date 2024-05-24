@@ -25,6 +25,8 @@ export class ProjectModalNewComponent implements OnInit {
 
   skillsList = ['Angular', 'C#', 'CSS', 'DOTNET', 'HTML', 'Javascript', 'NodeJS', 'Python', 'Typescript'];
 
+  iconList = []
+
   constructor(
     private fb: FormBuilder,
     private projectService: ProjectsService,
