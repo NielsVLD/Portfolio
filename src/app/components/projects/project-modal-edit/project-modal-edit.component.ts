@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
+  FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
@@ -8,17 +9,40 @@ import {
 import { ProjectsService } from '../../../services/projects.service';
 import { Project } from '../../../entities/project.entity';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatFormField } from '@angular/material/form-field';
+import { MatOption } from '@angular/material/autocomplete';
+import { MatSelect } from '@angular/material/select';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-project-modal-edit',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormField,
+    MatOption,
+    MatSelect,
+    NgForOf,
+  ],
   templateUrl: './project-modal-edit.component.html',
   styleUrl: './project-modal-edit.component.css',
 })
 export class ProjectModalEditComponent implements OnInit {
   updatedProjectForm!: FormGroup;
   project!: Project;
+  skills = new FormControl();
+  skillsList = [
+    'Angular',
+    'C#',
+    'CSS',
+    'DOTNET',
+    'HTML',
+    'Javascript',
+    'NodeJS',
+    'Python',
+    'Typescript',
+  ];
 
   constructor(
     private fb: FormBuilder,
@@ -31,10 +55,11 @@ export class ProjectModalEditComponent implements OnInit {
       id: [this.project.id],
       name: [this.project.name],
       description: [this.project.description],
-      descriptionLong: [''],
-      skills: [[]],
-      icons: [[]],
+      descriptionLong: [this.project.descriptionLong],
+      skills: [this.project.skills],
+      icons: [this.project.icons],
     });
+    this.skills.setValue(this.project.skills);
   }
 
   onSubmit() {
@@ -45,7 +70,7 @@ export class ProjectModalEditComponent implements OnInit {
         name: this.updatedProjectForm.get('name')?.value,
         description: this.updatedProjectForm.get('description')?.value,
         descriptionLong: this.updatedProjectForm.get('descriptionLong')?.value,
-        skills: this.updatedProjectForm.get('skills')?.value,
+        skills: this.skills.value,
         icons: this.updatedProjectForm.get('icons')?.value,
       };
       this.projectService

@@ -23,7 +23,11 @@
     <label>
       Skills:
       <mat-form-field>
-        <mat-select placeholder="Select skills..." [formControl]="skills" multiple>
+        <mat-select
+          placeholder="Select skills..."
+          [formControl]="skills"
+          multiple
+        >
           <mat-option *ngFor="let skill of skillsList" [value]="skill">{{
             skill
           }}</mat-option>

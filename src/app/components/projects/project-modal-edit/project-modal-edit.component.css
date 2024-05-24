@@ -66,3 +66,27 @@ div {
 textarea {
   resize: vertical; /* Allow vertical resizing only */
 }
+
+.mat-form-field {
+  width: 100%; /* Full width */
+  display: block;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.mat-form-field.mat-focused .mat-form-field-infix {
+  border-color: #1b263b; /* Dark blue border on focus */
+}
+
+.mat-option {
+  color: #1b263b; /* Dark blue text color for options */
+}
+
+.mat-select {
+  width: 100%; /* Ensure full width */
+  display: block;
+}
