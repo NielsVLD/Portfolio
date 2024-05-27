@@ -5,4 +5,5 @@ export interface Project {
   descriptionLong: string;
   skills: string[];
   icons: string[];
+  link: string;
 }

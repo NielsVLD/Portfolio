@@ -25,8 +25,6 @@ export class ProjectModalNewComponent implements OnInit {
 
   skillsList = ['Angular', 'C#', 'CSS', 'DOTNET', 'HTML', 'Javascript', 'NodeJS', 'Python', 'Typescript'];
 
-  iconList = []
-
   constructor(
     private fb: FormBuilder,
     private projectService: ProjectsService,
@@ -40,7 +38,8 @@ export class ProjectModalNewComponent implements OnInit {
       description: ["", Validators.required],
       descriptionLong: ["", Validators.required],
       skills: [[]],
-      icons: [[]]
+      icons: [[]],
+      link: [""]
     });
   }
 
@@ -56,7 +55,8 @@ export class ProjectModalNewComponent implements OnInit {
       description: this.newProjectForm.get('description')?.value,
       descriptionLong: this.newProjectForm.get('descriptionLong')?.value,
       skills: this.skills.value,
-      icons: this.newProjectForm.get('icons')?.value
+      icons: this.newProjectForm.get('icons')?.value,
+      link: this.newProjectForm.get('link')?.value
     }
         this.projectService.postNewProject(newProject).subscribe(
           (response) => {

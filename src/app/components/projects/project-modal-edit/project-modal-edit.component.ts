@@ -58,6 +58,7 @@ export class ProjectModalEditComponent implements OnInit {
       descriptionLong: [this.project.descriptionLong],
       skills: [this.project.skills],
       icons: [this.project.icons],
+      link: [this.project.link],
     });
     this.skills.setValue(this.project.skills);
   }
@@ -72,6 +73,7 @@ export class ProjectModalEditComponent implements OnInit {
         descriptionLong: this.updatedProjectForm.get('descriptionLong')?.value,
         skills: this.skills.value,
         icons: this.updatedProjectForm.get('icons')?.value,
+        link: this.updatedProjectForm.get('link')?.value,
       };
       this.projectService
         .updateProject(updatedProject, this.project.id)
