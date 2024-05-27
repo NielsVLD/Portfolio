@@ -13,6 +13,7 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatOption } from '@angular/material/autocomplete';
 import { MatSelect } from '@angular/material/select';
 import { NgForOf } from '@angular/common';
+import { skillsList } from '../../../helpers/constants';
 
 @Component({
   selector: 'app-project-modal-edit',
@@ -32,17 +33,7 @@ export class ProjectModalEditComponent implements OnInit {
   updatedProjectForm!: FormGroup;
   project!: Project;
   skills = new FormControl();
-  skillsList = [
-    'Angular',
-    'C#',
-    'CSS',
-    'DOTNET',
-    'HTML',
-    'Javascript',
-    'NodeJS',
-    'Python',
-    'Typescript',
-  ];
+  skillsList = skillsList;
 
   constructor(
     private fb: FormBuilder,

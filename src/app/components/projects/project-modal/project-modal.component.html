@@ -14,7 +14,9 @@
   </div>
 
   <div class="modal-body text">
-    <p><a href="{{ project.link }}">Link to project</a></p>
+    <ng-container *ngIf="project.link">
+      <p><a href="{{ project.link }}">Link to project</a></p>
+    </ng-container>
 
     <p>{{ project.descriptionLong }}</p>
     <h6>Skills:</h6>

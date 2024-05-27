@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import {
   FormBuilder, FormControl,
   FormGroup,
@@ -11,6 +11,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { MatFormField } from "@angular/material/form-field";
 import { MatOption, MatSelect } from "@angular/material/select";
 import { NgForOf } from "@angular/common";
+import { skillsList } from "../../../helpers/constants";
 
 @Component({
   selector: "app-project-modal-new",
@@ -23,7 +24,7 @@ export class ProjectModalNewComponent implements OnInit {
   newProjectForm!: FormGroup;
   skills = new FormControl()
 
-  skillsList = ['Angular', 'C#', 'CSS', 'DOTNET', 'HTML', 'Javascript', 'NodeJS', 'Python', 'Typescript'];
+  skillsList = skillsList
 
   constructor(
     private fb: FormBuilder,
