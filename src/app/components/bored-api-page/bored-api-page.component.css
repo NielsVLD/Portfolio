@@ -1,0 +1,16 @@
+.centered-content {
+  text-align: center; /* Centers text and inline elements like the spinner */
+  color: #1b263b; /* Dark blue color */
+  padding-top: 20px; /* Adds some space at the top */
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers children horizontally */
+}
+
+.centered-content h1 {
+  font-size: 2.5em; /* Bigger font size for the heading */
+}
+
+.centered-content p {
+  font-size: 1.5em; /* Bigger font size for the paragraph */
+}

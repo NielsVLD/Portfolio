@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectModalNewComponent } from './project-modal-new.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('ProjectModalNewComponent', () => {
   let component: ProjectModalNewComponent;
@@ -8,7 +10,7 @@ describe('ProjectModalNewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProjectModalNewComponent],
+      imports: [ProjectModalNewComponent, HttpClientModule, NgbActiveModal],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectModalNewComponent);

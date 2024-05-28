@@ -13,18 +13,10 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatOption } from '@angular/material/autocomplete';
 import { MatSelect } from '@angular/material/select';
 import { NgForOf } from '@angular/common';
+import { skillsList } from '../../../helpers/constants';
 
 @Component({
   selector: 'app-project-modal-edit',
-  standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormField,
-    MatOption,
-    MatSelect,
-    NgForOf,
-  ],
   templateUrl: './project-modal-edit.component.html',
   styleUrl: './project-modal-edit.component.css',
 })
@@ -32,17 +24,7 @@ export class ProjectModalEditComponent implements OnInit {
   updatedProjectForm!: FormGroup;
   project!: Project;
   skills = new FormControl();
-  skillsList = [
-    'Angular',
-    'C#',
-    'CSS',
-    'DOTNET',
-    'HTML',
-    'Javascript',
-    'NodeJS',
-    'Python',
-    'Typescript',
-  ];
+  skillsList = skillsList;
 
   constructor(
     private fb: FormBuilder,
@@ -58,6 +40,7 @@ export class ProjectModalEditComponent implements OnInit {
       descriptionLong: [this.project.descriptionLong],
       skills: [this.project.skills],
       icons: [this.project.icons],
+      link: [this.project.link],
     });
     this.skills.setValue(this.project.skills);
   }
@@ -72,6 +55,7 @@ export class ProjectModalEditComponent implements OnInit {
         descriptionLong: this.updatedProjectForm.get('descriptionLong')?.value,
         skills: this.skills.value,
         icons: this.updatedProjectForm.get('icons')?.value,
+        link: this.updatedProjectForm.get('link')?.value,
       };
       this.projectService
         .updateProject(updatedProject, this.project.id)

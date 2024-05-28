@@ -14,6 +14,16 @@ import { AboutComponent } from './components/about/about.component';
 import { AppRoutingModule } from './app.routing.module';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BoredApiPageComponent } from './components/bored-api-page/bored-api-page.component';
+import { HomeComponent } from './components/home/home.component';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ProjectModalComponent } from './components/projects/project-modal/project-modal.component';
+import { ProjectModalEditComponent } from './components/projects/project-modal-edit/project-modal-edit.component';
+import { ProjectModalNewComponent } from './components/projects/project-modal-new/project-modal-new.component';
+import { MatOption } from "@angular/material/autocomplete";
+import { MatSelect } from "@angular/material/select";
+import { MatFormField } from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -22,6 +32,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     AboutComponent,
+    BoredApiPageComponent,
+    HomeComponent,
+    ProjectsComponent,
+    ProjectModalComponent,
+    ProjectModalEditComponent,
+    ProjectModalNewComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -30,6 +47,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     MatProgressSpinner,
     BrowserAnimationsModule,
+    MatProgressSpinner,
+    MatOption,
+    MatSelect,
+    MatOption,
+    MatFormField
   ],
   providers: [
     {

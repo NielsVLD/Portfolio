@@ -1,21 +1,16 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import {
   FormBuilder, FormControl,
   FormGroup,
-  ReactiveFormsModule,
   Validators
 } from "@angular/forms";
 import { Project } from "../../../entities/project.entity";
 import { ProjectsService } from "../../../services/projects.service";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-import { MatFormField } from "@angular/material/form-field";
-import { MatOption, MatSelect } from "@angular/material/select";
-import { NgForOf } from "@angular/common";
+import { skillsList } from "../../../helpers/constants";
 
 @Component({
   selector: "app-project-modal-new",
-  standalone: true,
-  imports: [ReactiveFormsModule, MatFormField, MatSelect, MatOption, NgForOf],
   templateUrl: "./project-modal-new.component.html",
   styleUrl: "./project-modal-new.component.css"
 })
@@ -23,9 +18,7 @@ export class ProjectModalNewComponent implements OnInit {
   newProjectForm!: FormGroup;
   skills = new FormControl()
 
-  skillsList = ['Angular', 'C#', 'CSS', 'DOTNET', 'HTML', 'Javascript', 'NodeJS', 'Python', 'Typescript'];
-
-  iconList = []
+  skillsList = skillsList
 
   constructor(
     private fb: FormBuilder,
@@ -40,7 +33,8 @@ export class ProjectModalNewComponent implements OnInit {
       description: ["", Validators.required],
       descriptionLong: ["", Validators.required],
       skills: [[]],
-      icons: [[]]
+      icons: [[]],
+      link: [""]
     });
   }
 
@@ -56,7 +50,8 @@ export class ProjectModalNewComponent implements OnInit {
       description: this.newProjectForm.get('description')?.value,
       descriptionLong: this.newProjectForm.get('descriptionLong')?.value,
       skills: this.skills.value,
-      icons: this.newProjectForm.get('icons')?.value
+      icons: this.newProjectForm.get('icons')?.value,
+      link: this.newProjectForm.get('link')?.value
     }
         this.projectService.postNewProject(newProject).subscribe(
           (response) => {

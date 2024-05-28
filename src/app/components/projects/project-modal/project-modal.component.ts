@@ -7,8 +7,6 @@ import { ProjectModalEditComponent } from '../project-modal-edit/project-modal-e
 
 @Component({
   selector: 'app-project-modal',
-  standalone: true,
-  imports: [NgFor, NgIf],
   templateUrl: './project-modal.component.html',
   styleUrl: './project-modal.component.css',
 })
