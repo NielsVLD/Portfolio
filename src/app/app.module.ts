@@ -21,9 +21,10 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectModalComponent } from './components/projects/project-modal/project-modal.component';
 import { ProjectModalEditComponent } from './components/projects/project-modal-edit/project-modal-edit.component';
 import { ProjectModalNewComponent } from './components/projects/project-modal-new/project-modal-new.component';
-import { MatOption } from "@angular/material/autocomplete";
-import { MatSelect } from "@angular/material/select";
-import { MatFormField } from "@angular/material/form-field";
+import { MatOption } from '@angular/material/autocomplete';
+import { MatSelect } from '@angular/material/select';
+import { MatFormField } from '@angular/material/form-field';
+import { TodoListPageComponent } from './components/todo-list-page/todo-list-page.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { MatFormField } from "@angular/material/form-field";
     ProjectModalComponent,
     ProjectModalEditComponent,
     ProjectModalNewComponent,
-
+    TodoListPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +52,7 @@ import { MatFormField } from "@angular/material/form-field";
     MatOption,
     MatSelect,
     MatOption,
-    MatFormField
+    MatFormField,
   ],
   providers: [
     {
