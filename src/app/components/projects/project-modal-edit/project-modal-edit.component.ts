@@ -17,15 +17,6 @@ import { skillsList } from '../../../helpers/constants';
 
 @Component({
   selector: 'app-project-modal-edit',
-  standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormField,
-    MatOption,
-    MatSelect,
-    NgForOf,
-  ],
   templateUrl: './project-modal-edit.component.html',
   styleUrl: './project-modal-edit.component.css',
 })

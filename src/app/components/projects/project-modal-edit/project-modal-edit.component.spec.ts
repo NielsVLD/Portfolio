@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectModalEditComponent } from './project-modal-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder } from '@angular/forms';
 
 describe('ProjectModalEditComponent', () => {
   let component: ProjectModalEditComponent;
@@ -8,7 +11,12 @@ describe('ProjectModalEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProjectModalEditComponent],
+      imports: [
+        ProjectModalEditComponent,
+        HttpClientModule,
+        NgbActiveModal,
+        FormBuilder,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectModalEditComponent);

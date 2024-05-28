@@ -8,6 +8,7 @@ import { catchError, of } from 'rxjs';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
+  public title: string = 'Portfolio';
   public isSignedIn: boolean = false;
 
   constructor(private auth: AuthService) {}

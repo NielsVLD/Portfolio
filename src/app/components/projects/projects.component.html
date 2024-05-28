@@ -1,4 +1,4 @@
-<ng-container *ngIf="loaded">
+<ng-container *ngIf="loaded; else loading">
   <div class="intro">
     <h1>
       Projects
@@ -6,7 +6,12 @@
         <li (click)="openModalNewProject()" class="fa fa-plus icon"></li>
       </ng-container>
     </h1>
-    <p>Explore some of the things I've worked on:</p>
+    <ng-container *ngIf="projects[0]; else noProjects">
+      <p>Explore some of the things I've worked on:</p>
+    </ng-container>
+    <ng-template #noProjects>
+      <p>There are currently no projects shown off. Check back later!</p>
+    </ng-template>
   </div>
 
   <div class="projects">
@@ -23,3 +28,9 @@
     </div>
   </div>
 </ng-container>
+
+<ng-template #loading>
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

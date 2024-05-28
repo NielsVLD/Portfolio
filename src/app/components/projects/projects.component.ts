@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForOf, NgIf } from '@angular/common';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
 import { Project } from '../../entities/project.entity';
 import { ProjectsService } from '../../services/projects.service';
 import { AuthService } from '../../services/auth.service';
 import { ProjectModalNewComponent } from './project-modal-new/project-modal-new.component';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-projects',
-  standalone: true,
-  imports: [NgForOf, NgIf],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
