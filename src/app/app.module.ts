@@ -25,6 +25,7 @@ import { MatOption } from '@angular/material/autocomplete';
 import { MatSelect } from '@angular/material/select';
 import { MatFormField } from '@angular/material/form-field';
 import { TodoListPageComponent } from './components/todo-list-page/todo-list-page.component';
+import { TodoListModalNewComponent } from './components/todo-list-page/todo-list-modal-new/todo-list-modal-new.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TodoListPageComponent } from './components/todo-list-page/todo-list-pag
     ProjectModalEditComponent,
     ProjectModalNewComponent,
     TodoListPageComponent,
+    TodoListModalNewComponent,
   ],
   imports: [
     BrowserModule,
