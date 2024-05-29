@@ -11,8 +11,8 @@ describe('ProjectModalEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      declarations: [ ProjectModalEditComponent ],
       imports: [
-        ProjectModalEditComponent,
         HttpClientModule,
         NgbActiveModal,
         FormBuilder,

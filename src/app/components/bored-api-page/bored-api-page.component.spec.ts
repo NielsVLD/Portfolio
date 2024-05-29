@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BoredApiPageComponent } from './bored-api-page.component';
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
 
 describe('BoredApiPageComponent', () => {
   let component: BoredApiPageComponent;
@@ -8,7 +10,8 @@ describe('BoredApiPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BoredApiPageComponent],
+      declarations: [BoredApiPageComponent],
+      imports: [HttpClientTestingModule, MatProgressSpinner],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BoredApiPageComponent);

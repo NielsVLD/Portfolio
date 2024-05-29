@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodoListPageComponent } from './todo-list-page.component';
+import { HttpClientModule } from "@angular/common/http";
 
 describe('TodoListPageComponent', () => {
   let component: TodoListPageComponent;
@@ -8,7 +9,8 @@ describe('TodoListPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodoListPageComponent],
+      declarations: [TodoListPageComponent],
+      imports: [HttpClientModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TodoListPageComponent);
