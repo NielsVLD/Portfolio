@@ -7,7 +7,7 @@ describe('ProjectModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProjectModalComponent ],
+      declarations: [ProjectModalComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectModalComponent);

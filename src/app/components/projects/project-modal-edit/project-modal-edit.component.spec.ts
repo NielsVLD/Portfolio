@@ -11,12 +11,8 @@ describe('ProjectModalEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProjectModalEditComponent ],
-      imports: [
-        HttpClientModule,
-        NgbActiveModal,
-        FormBuilder,
-      ],
+      declarations: [ProjectModalEditComponent],
+      imports: [HttpClientModule, NgbActiveModal, FormBuilder],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectModalEditComponent);

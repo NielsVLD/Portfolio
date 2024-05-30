@@ -10,8 +10,8 @@ describe('ProjectModalNewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProjectModalNewComponent ],
-      imports: [ HttpClientModule, NgbActiveModal],
+      declarations: [ProjectModalNewComponent],
+      imports: [HttpClientModule, NgbActiveModal],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectModalNewComponent);

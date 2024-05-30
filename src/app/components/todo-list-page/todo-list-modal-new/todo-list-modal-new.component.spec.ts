@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodoListModalNewComponent } from './todo-list-modal-new.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 
 describe('TodoListModalNewComponent', () => {
   let component: TodoListModalNewComponent;
@@ -10,7 +10,7 @@ describe('TodoListModalNewComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TodoListModalNewComponent],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TodoListModalNewComponent);
