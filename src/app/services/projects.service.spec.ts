@@ -50,4 +50,20 @@ describe('ProjectsService', () => {
     }, done.fail);
     expect(httpSpy.get.calls.count()).toBe(1);
   });
+
+  it('should handle HTTP errors when fetching projects', (done: DoneFn) => {
+    const errorResponse = new ErrorEvent('Network error', {
+      message: 'Unable to connect to the server',
+    });
+
+    httpSpy.get.and.throwWith(errorResponse);
+
+    service.getProjects().subscribe({
+      next: () => done.fail('Expected an error, but got a project list'),
+      error: (error) => {
+        expect(error.message).toContain('Unable to connect to the server');
+        done();
+      },
+    });
+  });
 });
