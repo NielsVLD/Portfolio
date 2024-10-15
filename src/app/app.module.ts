@@ -16,16 +16,16 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoredApiPageComponent } from './components/bored-api-page/bored-api-page.component';
 import { HomeComponent } from './components/home/home.component';
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectModalComponent } from './components/projects/project-modal/project-modal.component';
 import { ProjectModalEditComponent } from './components/projects/project-modal-edit/project-modal-edit.component';
 import { ProjectModalNewComponent } from './components/projects/project-modal-new/project-modal-new.component';
+import { TodoListPageComponent } from './components/todo-list-page/todo-list-page.component';
+import { TodoListModalNewComponent } from './components/todo-list-page/todo-list-modal-new/todo-list-modal-new.component';
 import { MatOption } from '@angular/material/autocomplete';
 import { MatSelect } from '@angular/material/select';
 import { MatFormField } from '@angular/material/form-field';
-import { TodoListPageComponent } from './components/todo-list-page/todo-list-page.component';
-import { TodoListModalNewComponent } from './components/todo-list-page/todo-list-modal-new/todo-list-modal-new.component';
+import { MdbRippleModule } from "mdb-angular-ui-kit/ripple";
 
 @NgModule({
   declarations: [
@@ -55,6 +55,7 @@ import { TodoListModalNewComponent } from './components/todo-list-page/todo-list
     MatSelect,
     MatOption,
     MatFormField,
+    MdbRippleModule,
   ],
   providers: [
     {

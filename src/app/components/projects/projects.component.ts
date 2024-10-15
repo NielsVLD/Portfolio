@@ -5,7 +5,6 @@ import { Project } from '../../entities/project.entity';
 import { ProjectsService } from '../../services/projects.service';
 import { AuthService } from '../../services/auth.service';
 import { ProjectModalNewComponent } from './project-modal-new/project-modal-new.component';
-import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-projects',

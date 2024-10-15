@@ -7,11 +7,11 @@ import { Injectable } from '@angular/core';
 import { UserInfo } from '../entities/user.entity';
 import {
   BehaviorSubject,
-  Observable,
-  Subject,
   catchError,
   map,
+  Observable,
   of,
+  Subject,
 } from 'rxjs';
 
 @Injectable({
@@ -110,12 +110,7 @@ export class AuthService {
   public isSignedIn(): Observable<boolean> {
     return this.user().pipe(
       map((userInfo) => {
-        const valid = !!(
-          userInfo &&
-          userInfo.email &&
-          userInfo.email.length > 0
-        );
-        return valid;
+        return !!(userInfo && userInfo.email && userInfo.email.length > 0);
       }),
       catchError((_) => {
         return of(false);
