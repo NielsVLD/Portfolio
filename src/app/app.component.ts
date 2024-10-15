@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
   ngOnInit() {
-    this.auth.onStateChanged().forEach((state: any) => {
+    this.auth.onStateChanged().forEach(() => {
       this.auth
         .isSignedIn()
         .pipe(

@@ -3,16 +3,10 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
 } from '@angular/forms';
 import { ProjectsService } from '../../../services/projects.service';
 import { Project } from '../../../entities/project.entity';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { MatFormField } from '@angular/material/form-field';
-import { MatOption } from '@angular/material/autocomplete';
-import { MatSelect } from '@angular/material/select';
-import { NgForOf } from '@angular/common';
 import { skillsList } from '../../../helpers/constants';
 
 @Component({
@@ -60,7 +54,7 @@ export class ProjectModalEditComponent implements OnInit {
       this.projectService
         .updateProject(updatedProject, this.project.id)
         .subscribe(
-          (response) => {
+          () => {
             console.log('project updated');
           },
           (error) => {
