@@ -49,6 +49,11 @@
   background-color: transparent; /* Remove background color on hover */
 }
 
+.navbar i:hover {
+  color: #bdbdbd;
+  background-color: transparent;
+}
+
 .navbar .signOut {
   color: #f1faee;
   font-size: 2em;
