@@ -5,9 +5,10 @@ import { AuthService } from '../../../services/auth.service';
 import { ProjectModalEditComponent } from '../project-modal-edit/project-modal-edit.component';
 
 @Component({
-  selector: 'app-project-modal',
-  templateUrl: './project-modal.component.html',
-  styleUrl: './project-modal.component.css',
+    selector: 'app-project-modal',
+    templateUrl: './project-modal.component.html',
+    styleUrl: './project-modal.component.css',
+    standalone: false
 })
 export class ProjectModalComponent implements OnInit {
   @Input() project!: Project;
