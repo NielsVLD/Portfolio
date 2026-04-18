@@ -27,9 +27,9 @@
           [formControl]="skills"
           multiple
         >
-          <mat-option *ngFor="let skill of skillsList" [value]="skill">{{
-            skill
-          }}</mat-option>
+          @for (skill of skillsList; track skill) {
+            <mat-option [value]="skill">{{ skill }}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </label>

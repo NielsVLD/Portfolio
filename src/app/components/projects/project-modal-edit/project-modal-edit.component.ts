@@ -10,9 +10,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { skillsList } from '../../../helpers/constants';
 
 @Component({
-  selector: 'app-project-modal-edit',
-  templateUrl: './project-modal-edit.component.html',
-  styleUrl: './project-modal-edit.component.css',
+    selector: 'app-project-modal-edit',
+    templateUrl: './project-modal-edit.component.html',
+    styleUrl: './project-modal-edit.component.css',
+    standalone: false
 })
 export class ProjectModalEditComponent implements OnInit {
   updatedProjectForm!: FormGroup;

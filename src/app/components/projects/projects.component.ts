@@ -7,9 +7,10 @@ import { AuthService } from '../../services/auth.service';
 import { ProjectModalNewComponent } from './project-modal-new/project-modal-new.component';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css',
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.css',
+    standalone: false
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
