@@ -2,26 +2,26 @@
   <div class="modal-header text">
     <h5 class="modal-title">
       {{ project.name }}
-      <ng-container *ngIf="isSignedIn">
+      @if (isSignedIn) {
         <i
           (click)="openEditModal()"
           style="cursor: pointer"
           class="fa fa-pencil-square"
         ></i>
-      </ng-container>
+      }
     </h5>
     <li (click)="closeModal()" class="fa fa-times icons"></li>
   </div>
 
   <div class="modal-body text">
-    <ng-container *ngIf="project.link">
+    @if (project.link) {
       <p><a href="{{ project.link }}">Link to project</a></p>
-    </ng-container>
+    }
 
     <p>{{ project.descriptionLong }}</p>
     <h6>Skills:</h6>
-    <ng-container *ngFor="let skill of project.skills">
+    @for (skill of project.skills; track skill) {
       <p>{{ skill }}</p>
-    </ng-container>
+    }
   </div>
 </div>

@@ -25,7 +25,9 @@
           questions or would like to collaborate!
         </p>
       </div>
-      <mat-spinner *ngIf="!loaded"></mat-spinner>
+      @if (!loaded) {
+        <mat-spinner></mat-spinner>
+      }
       <div class="photo">
         <img
           src="{{ profilePicture }}"

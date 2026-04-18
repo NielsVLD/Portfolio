@@ -13,20 +13,25 @@
     <p>{{ getMaskedWord() }}</p>
     <p>
       Guessed Letters:
-      <span *ngFor="let letter of guessedLetters">{{ letter }}</span>
+      @for (letter of guessedLetters; track letter) {
+        <span>{{ letter }}</span>
+      }
     </p>
-    <button
-      *ngFor="let letter of 'abcdefghijklmnopqrstuvwxyz'.split('')"
-      (click)="makeGuess(letter)"
-      [disabled]="guessedLetters.has(letter) || isGameOver()"
-    >
-      {{ letter }}
-    </button>
+    @for (letter of "abcdefghijklmnopqrstuvwxyz".split(""); track letter) {
+      <button
+        (click)="makeGuess(letter)"
+        [disabled]="guessedLetters.has(letter) || isGameOver()"
+      >
+        {{ letter }}
+      </button>
+    }
   </ng-container>
-  <p class="win-text" *ngIf="isGameOver()">
-    {{ isWordGuessed() ? "Congratulations, you won!" : "Game Over" }}
-    <button (click)="pickRandomWord()">Play Again</button>
-  </p>
+  @if (isGameOver()) {
+    <p class="win-text">
+      {{ isWordGuessed() ? "Congratulations, you won!" : "Game Over" }}
+      <button (click)="pickRandomWord()">Play Again</button>
+    </p>
+  }
 </div>
 
 <h2 class="header-text">
