@@ -50,7 +50,8 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Portfolio:build:production"
+              "buildTarget": "Portfolio:build:production",
+              "proxyConfig": "./proxy.config.js"
             },
             "development": {
               "buildTarget": "Portfolio:build:development"
