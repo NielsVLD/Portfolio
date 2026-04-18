@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Project } from '../../entities/project.entity';
 
 @Component({
-    selector: 'app-about',
-    templateUrl: './about.component.html',
-    styleUrl: './about.component.css',
-    standalone: false
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.css',
+  standalone: false,
 })
 export class AboutComponent {
   profilePicture: string =

@@ -3,10 +3,10 @@ import { BoredService } from '../../services/boredService';
 import { IBoredApi } from '../../entities/boredApi.entity';
 
 @Component({
-    selector: 'app-bored-api-page',
-    templateUrl: './bored-api-page.component.html',
-    styleUrl: './bored-api-page.component.css',
-    standalone: false
+  selector: 'app-bored-api-page',
+  templateUrl: './bored-api-page.component.html',
+  styleUrl: './bored-api-page.component.css',
+  standalone: false,
 })
 export class BoredApiPageComponent implements OnInit {
   activity!: IBoredApi;

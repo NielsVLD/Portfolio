@@ -1,4 +1,8 @@
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -23,42 +27,48 @@ import { ProjectModalNewComponent } from './components/projects/project-modal-ne
 import { MatOption } from '@angular/material/autocomplete';
 import { MatSelect } from '@angular/material/select';
 import { MatFormField } from '@angular/material/form-field';
-import { MdbRippleModule } from "mdb-angular-ui-kit/ripple";
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 
-@NgModule({ declarations: [
-        AppComponent,
-        LoginComponent,
-        HeaderComponent,
-        FooterComponent,
-        AboutComponent,
-        BoredApiPageComponent,
-        HomeComponent,
-        ProjectsComponent,
-        ProjectModalComponent,
-        ProjectModalEditComponent,
-        ProjectModalNewComponent,
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        ReactiveFormsModule,
-        AppRoutingModule,
-        MatProgressSpinner,
-        BrowserAnimationsModule,
-        MatProgressSpinner,
-        MatOption,
-        MatSelect,
-        MatOption,
-        MatFormField,
-        MdbRippleModule], providers: [
-        {
-            provide: HTTP_INTERCEPTORS,
-            useFactory: (router: Router) => {
-                return new AuthInterceptor(router);
-            },
-            multi: true,
-            deps: [Router],
-        },
-        AuthGuard,
-        AuthService,
-        provideHttpClient(withInterceptorsFromDi()),
-    ] })
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent,
+    AboutComponent,
+    BoredApiPageComponent,
+    HomeComponent,
+    ProjectsComponent,
+    ProjectModalComponent,
+    ProjectModalEditComponent,
+    ProjectModalNewComponent,
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    MatProgressSpinner,
+    BrowserAnimationsModule,
+    MatProgressSpinner,
+    MatOption,
+    MatSelect,
+    MatOption,
+    MatFormField,
+    MdbRippleModule,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: (router: Router) => {
+        return new AuthInterceptor(router);
+      },
+      multi: true,
+      deps: [Router],
+    },
+    AuthGuard,
+    AuthService,
+    provideHttpClient(withInterceptorsFromDi()),
+  ],
+})
 export class AppModule {}

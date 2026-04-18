@@ -1,7 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectModalNewComponent } from './project-modal-new.component';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('ProjectModalNewComponent', () => {
@@ -10,9 +13,9 @@ describe('ProjectModalNewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [ProjectModalNewComponent, NgbActiveModal],
-    providers: [provideHttpClient(withInterceptorsFromDi())]
-}).compileComponents();
+      imports: [ProjectModalNewComponent, NgbActiveModal],
+      providers: [provideHttpClient(withInterceptorsFromDi())],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectModalNewComponent);
     component = fixture.componentInstance;
