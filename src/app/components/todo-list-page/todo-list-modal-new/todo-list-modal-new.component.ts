@@ -7,6 +7,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-todo-list-modal-new',
   templateUrl: './todo-list-modal-new.component.html',
   styleUrl: './todo-list-modal-new.component.css',
+  standalone: false,
 })
 export class TodoListModalNewComponent implements OnInit {
   newTodoListForm!: FormGroup;

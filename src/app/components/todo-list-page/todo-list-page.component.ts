@@ -8,6 +8,7 @@ import { TodoListModalNewComponent } from './todo-list-modal-new/todo-list-modal
   selector: 'app-todo-list-page',
   templateUrl: './todo-list-page.component.html',
   styleUrl: './todo-list-page.component.css',
+  standalone: false,
 })
 export class TodoListPageComponent {
   constructor(
