@@ -6,6 +6,7 @@ import { AuthService } from '../../services/auth.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
+  standalone: false,
 })
 export class HeaderComponent implements OnInit {
   github: string = 'https://github.com/NielsVLD';

@@ -1,4 +1,8 @@
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -25,7 +29,7 @@ import { TodoListModalNewComponent } from './components/todo-list-page/todo-list
 import { MatOption } from '@angular/material/autocomplete';
 import { MatSelect } from '@angular/material/select';
 import { MatFormField } from '@angular/material/form-field';
-import { MdbRippleModule } from "mdb-angular-ui-kit/ripple";
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 
 @NgModule({
   declarations: [
@@ -43,9 +47,9 @@ import { MdbRippleModule } from "mdb-angular-ui-kit/ripple";
     TodoListPageComponent,
     TodoListModalNewComponent,
   ],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
-    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     MatProgressSpinner,
@@ -68,7 +72,7 @@ import { MdbRippleModule } from "mdb-angular-ui-kit/ripple";
     },
     AuthGuard,
     AuthService,
+    provideHttpClient(withInterceptorsFromDi()),
   ],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}

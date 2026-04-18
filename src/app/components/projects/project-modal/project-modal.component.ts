@@ -8,6 +8,7 @@ import { ProjectModalEditComponent } from '../project-modal-edit/project-modal-e
   selector: 'app-project-modal',
   templateUrl: './project-modal.component.html',
   styleUrl: './project-modal.component.css',
+  standalone: false,
 })
 export class ProjectModalComponent implements OnInit {
   @Input() project!: Project;

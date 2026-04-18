@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+  standalone: false,
 })
 export class HomeComponent {
   word: string = '';

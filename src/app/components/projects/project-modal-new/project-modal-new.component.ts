@@ -10,9 +10,10 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { skillsList } from "../../../helpers/constants";
 
 @Component({
-  selector: "app-project-modal-new",
-  templateUrl: "./project-modal-new.component.html",
-  styleUrl: "./project-modal-new.component.css"
+    selector: "app-project-modal-new",
+    templateUrl: "./project-modal-new.component.html",
+    styleUrl: "./project-modal-new.component.css",
+    standalone: false
 })
 export class ProjectModalNewComponent implements OnInit {
   newProjectForm!: FormGroup;

@@ -1,7 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectModalEditComponent } from './project-modal-edit.component';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -12,13 +15,8 @@ describe('ProjectModalEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectModalEditComponent],
-      imports: [HttpClientModule],
-      providers: [
-        { provide: NgbActiveModal, useValue: {} },
-        { provide: FormBuilder, useValue: {} },
-      ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [ProjectModalEditComponent, NgbActiveModal, FormBuilder],
+      providers: [provideHttpClient(withInterceptorsFromDi())],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectModalEditComponent);

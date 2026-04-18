@@ -1,7 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectsComponent } from './projects.component';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 describe('ProjectsComponent', () => {
@@ -10,8 +13,8 @@ describe('ProjectsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectsComponent],
-      imports: [HttpClientModule, MatProgressSpinner],
+      imports: [ProjectsComponent],
+      providers: [provideHttpClient(withInterceptorsFromDi())],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectsComponent);

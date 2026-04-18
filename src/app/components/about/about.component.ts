@@ -5,6 +5,7 @@ import { Project } from '../../entities/project.entity';
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
+  standalone: false,
 })
 export class AboutComponent {
   profilePicture: string =
